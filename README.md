@@ -21,7 +21,7 @@ Os testes incluem simulação de múltiplos usuários, verificações de tempo d
 📦 automacao_k6
 ├── 📂 .github
 │   └── 📂 workflows
-│       └── k6-ci.yml       # Workflow para execução automática no GitHub Actions
+│       └── 📜 k6-ci.yml     # Workflow para execução automática no GitHub Actions
 ├── 📂 test.js               # Script de teste de performance com K6
 ├── 📜 README.md             # Documentação do projeto
 ```
@@ -55,10 +55,6 @@ k6 run test.js
 ```
 
 O K6 executará os testes e exibirá as métricas no terminal.
-
-### 🤖 Executar Testes no Modo Headless
-
-O K6 já executa os testes em **modo headless** por padrão, ou seja, sem interface gráfica.
 
 ### 📜 Resultados dos Testes
 
@@ -102,8 +98,8 @@ Fique à vontade para abrir **issues**, sugerir melhorias ou enviar **pull reque
 
 ### 📄 Licença
 
-Este projeto está sob a licença **MIT**. Para mais detalhes, consulte o arquivo `LICENSE`.
+Este projeto está sob a licença **MIT**. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
 
 ---
 
-Desenvolvido por **Dienes Stein** 💻✨
+Desenvolvido por [Dienes Stein](https://github.com/dienesgithub) 💻✨
