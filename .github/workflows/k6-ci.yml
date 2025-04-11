@@ -1,0 +1,27 @@
+name: Teste de Performance com K6
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  k6-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar o repositório
+        uses: actions/checkout@v3
+
+      - name: Instalar o K6
+        run: |
+          sudo apt update
+          sudo apt install -y gnupg software-properties-common
+          sudo gpg --keyserver keyserver.ubuntu.com --recv-keys 33D40BC6
+          echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt update
+          sudo apt install -y k6
+
+      - name: Rodar teste com K6
+        run: k6 run test.js
