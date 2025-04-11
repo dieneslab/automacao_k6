@@ -2,26 +2,26 @@ name: Teste de Performance com K6
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  k6-test:
+  k6-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar o repositório
+      - name: Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: Instalar o K6
+      - name: Instalar dependências do K6
         run: |
-          sudo apt update
-          sudo apt install -y gnupg software-properties-common
-          sudo gpg --keyserver keyserver.ubuntu.com --recv-keys 33D40BC6
-          echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
-          sudo apt update
-          sudo apt install -y k6
+          sudo apt-get update
+          sudo apt-get install -y gnupg ca-certificates
+          curl -fsSL https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/k6-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update
+          sudo apt-get install -y k6
 
-      - name: Rodar teste com K6
+      - name: Rodar testes de performance
         run: k6 run test.js
