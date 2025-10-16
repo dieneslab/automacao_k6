@@ -38,7 +38,7 @@ Antes de começar, certifique-se de ter instalado:
 ### 📥 Clonar o Repositório
 
 ```sh
-git clone https://github.com/dienesgithub/automacao_k6.git
+git clone https://github.com/dieneslab/automacao_k6.git
 cd automacao_k6
 ```
 
@@ -102,4 +102,4 @@ Este projeto está sob a licença **MIT**. Para mais detalhes, consulte o arquiv
 
 ---
 
-Desenvolvido por [Dienes Stein](https://github.com/dienesgithub) 💻✨
+Desenvolvido por [Dienes Stein](https://github.com/dieneslab) 💻✨
